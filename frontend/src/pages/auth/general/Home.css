@@ -1,0 +1,891 @@
+.discovery-page {
+  min-height: 100vh;
+  padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+.discovery-header {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: 0 5px 18px rgb(34 29 24 / 4%);
+}
+
+.discovery-header-inner {
+  display: flex;
+  width: min(100% - 40px, 1180px);
+  min-height: 82px;
+  align-items: center;
+  gap: 28px;
+  margin: 0 auto;
+}
+
+.discovery-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-size: 25px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+  text-decoration: none;
+}
+
+.discovery-brand-mark {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 18px;
+  letter-spacing: -1px;
+}
+
+.discovery-location {
+  display: grid;
+  min-width: 150px;
+  gap: 4px;
+  padding-left: 24px;
+  border-left: 1px solid var(--color-border);
+}
+
+.discovery-location > span {
+  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.discovery-location select {
+  width: 190px;
+  max-width: 22vw;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.discovery-search {
+  display: flex;
+  min-width: 150px;
+  height: 44px;
+  flex: 1;
+  align-items: center;
+  gap: 11px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 11px;
+  background: var(--color-page);
+}
+
+.discovery-search svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+}
+
+.discovery-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 13px;
+}
+
+.discovery-search:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.discovery-sign-in {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.discovery-content {
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+}
+
+.discovery-mode {
+  display: flex;
+  gap: 30px;
+  padding: 18px 0 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.discovery-mode button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 12px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.discovery-mode button.is-selected {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.discovery-mode-icon {
+  display: grid;
+  width: 37px;
+  height: 37px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-surface-muted);
+  font-size: 19px;
+}
+
+.discovery-mode button.is-selected .discovery-mode-icon {
+  background: var(--color-accent-soft);
+}
+
+.discovery-eyebrow {
+  margin: 0 0 7px;
+  color: var(--color-accent);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.discovery-hero {
+  position: relative;
+  display: flex;
+  min-height: 350px;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  margin: 24px 0 42px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 22px;
+  background: #241a15;
+  box-shadow: 0 22px 54px rgb(52 32 22 / 20%);
+}
+
+.discovery-hero-video,
+.discovery-hero-shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.discovery-hero-video {
+  object-fit: cover;
+  object-position: center 43%;
+}
+
+.discovery-hero-shade {
+  background:
+    linear-gradient(90deg, rgb(20 13 10 / 88%) 0%, rgb(28 17 12 / 70%) 38%, rgb(24 15 12 / 10%) 100%),
+    linear-gradient(0deg, rgb(18 12 9 / 44%), transparent 50%);
+}
+
+.discovery-hero-copy {
+  width: min(62%, 590px);
+  padding: 44px 48px;
+  color: #fff;
+}
+
+.discovery-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(255 255 255 / 88%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.discovery-hero-kicker span {
+  color: #ffc078;
+  font-size: 15px;
+}
+
+.discovery-hero-copy h1 {
+  margin: 16px 0 10px;
+  font-size: clamp(34px, 5vw, 55px);
+  font-weight: 780;
+  letter-spacing: -2px;
+  line-height: 1.03;
+}
+
+.discovery-hero-copy > p {
+  max-width: 430px;
+  margin: 0;
+  color: rgb(255 255 255 / 82%);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.discovery-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 23px;
+}
+
+.discovery-hero-primary,
+.discovery-hero-secondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border-radius: 9px;
+  text-decoration: none;
+}
+
+.discovery-hero-primary {
+  background: #fff;
+  color: #32231d;
+  font-size: 12px;
+  font-weight: 750;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.discovery-hero-primary:hover {
+  transform: translateY(-1px);
+  background: #fff0e2;
+}
+
+.discovery-hero-secondary {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.discovery-hero-secondary:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+.discovery-hero-caption {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  display: grid;
+  gap: 4px;
+  min-width: 150px;
+  padding: 12px 15px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 12px;
+  background: rgb(21 16 13 / 62%);
+  color: #fff;
+  backdrop-filter: blur(12px);
+}
+
+.discovery-hero-caption > span,
+.discovery-hero-caption small {
+  color: rgb(255 255 255 / 72%);
+  font-size: 10px;
+}
+
+.discovery-hero-caption strong {
+  font-size: 13px;
+}
+
+.discovery-section {
+  margin-top: 40px;
+}
+
+.discovery-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.discovery-section-heading .discovery-eyebrow {
+  margin-bottom: 5px;
+}
+
+.discovery-section-heading h2 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 25px);
+  letter-spacing: -0.65px;
+}
+
+.discovery-section-aside {
+  padding-bottom: 2px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.discovery-result-count {
+  flex: 0 0 auto;
+  padding-bottom: 2px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.discovery-dishes {
+  display: grid;
+  grid-auto-columns: minmax(145px, 1fr);
+  grid-auto-flow: column;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 2px 2px 12px;
+  scrollbar-width: none;
+}
+
+.discovery-dishes::-webkit-scrollbar {
+  display: none;
+}
+
+.discovery-dish {
+  display: grid;
+  min-width: 0;
+  gap: 10px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgb(34 29 24 / 5%);
+  transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.discovery-dish:hover {
+  transform: translateY(-3px);
+  border-color: rgb(230 75 60 / 45%);
+  box-shadow: 0 12px 26px rgb(34 29 24 / 11%);
+}
+
+.discovery-dish[aria-pressed="true"] {
+  border-color: var(--color-accent);
+}
+
+.discovery-dish-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1.2;
+  background: var(--color-surface-muted);
+}
+
+.discovery-dish-media video,
+.discovery-dish-media-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.discovery-dish-media video {
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.discovery-dish:hover .discovery-dish-media video {
+  transform: scale(1.05);
+}
+
+.discovery-dish-media-shade {
+  background: linear-gradient(0deg, rgb(24 16 12 / 18%), transparent 55%);
+}
+
+.discovery-dish-label {
+  display: block;
+  min-height: 38px;
+  padding: 0 12px 12px;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.discovery-restaurants {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.discovery-restaurant-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  background: var(--color-surface);
+  box-shadow: 0 7px 24px rgb(34 29 24 / 6%);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.discovery-restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 17px 38px rgb(34 29 24 / 13%);
+}
+
+.discovery-restaurant-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.65;
+  background: var(--color-surface-muted);
+  text-decoration: none;
+}
+
+.discovery-restaurant-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.discovery-restaurant-card:hover .discovery-restaurant-media video {
+  transform: scale(1.035);
+}
+
+.discovery-media-tag {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  padding: 6px 9px;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 999px;
+  background: rgb(20 16 13 / 58%);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.discovery-restaurant-copy {
+  padding: 15px 16px 16px;
+}
+
+.discovery-restaurant-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.discovery-restaurant-heading h3 {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  letter-spacing: -0.35px;
+}
+
+.discovery-food-count {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.discovery-address {
+  margin: 6px 0 0;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.discovery-dish-name {
+  margin: 13px 0 10px;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.discovery-restaurant-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 13px;
+}
+
+.discovery-restaurant-meta > span {
+  padding: 5px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.discovery-restaurant-meta .discovery-rating {
+  border-color: #227a48;
+  background: #227a48;
+  color: #fff;
+  font-weight: 750;
+}
+
+.discovery-rating span {
+  margin-right: 2px;
+  color: #ffe28a;
+}
+
+.discovery-restaurant-copy > a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.discovery-restaurant-copy > a:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.discovery-state,
+.discovery-unavailable {
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.discovery-state {
+  margin: 0 0 24px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.discovery-state h3 {
+  margin: 0 0 6px;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.discovery-state p {
+  margin: 0;
+}
+
+.discovery-state--error {
+  color: var(--color-accent-hover);
+}
+
+.discovery-unavailable {
+  max-width: 600px;
+  margin: 48px auto;
+  padding: 36px;
+  box-shadow: var(--shadow-card);
+}
+
+.discovery-unavailable h1 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(24px, 5vw, 32px);
+  letter-spacing: -0.8px;
+}
+
+.discovery-unavailable > p:not(.discovery-eyebrow) {
+  margin: 12px 0 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.discovery-unavailable button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .discovery-header-inner {
+    gap: 18px;
+  }
+
+  .discovery-location {
+    min-width: 130px;
+    padding-left: 16px;
+  }
+
+  .discovery-location select {
+    width: 160px;
+  }
+
+  .discovery-restaurants {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .discovery-header-inner {
+    width: min(100% - 28px, 520px);
+    min-height: 0;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .discovery-brand {
+    font-size: 22px;
+  }
+
+  .discovery-brand-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .discovery-location {
+    min-width: 0;
+    flex: 1;
+    margin-left: auto;
+    padding-left: 12px;
+  }
+
+  .discovery-location select {
+    width: 100%;
+    max-width: 46vw;
+  }
+
+  .discovery-sign-in {
+    display: none;
+  }
+
+  .discovery-search {
+    order: 1;
+    height: 41px;
+    flex-basis: 100%;
+  }
+
+  .discovery-content {
+    width: min(100% - 28px, 520px);
+  }
+
+  .discovery-mode {
+    gap: 22px;
+    padding-top: 15px;
+  }
+
+  .discovery-mode button {
+    min-height: 46px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .discovery-mode-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .discovery-hero {
+    min-height: 340px;
+    align-items: flex-end;
+    margin: 18px 0 32px;
+    border-radius: 17px;
+  }
+
+  .discovery-hero-shade {
+    background:
+      linear-gradient(0deg, rgb(20 13 10 / 92%) 0%, rgb(28 17 12 / 70%) 48%, rgb(24 15 12 / 14%) 100%),
+      linear-gradient(90deg, rgb(18 12 9 / 35%), transparent 75%);
+  }
+
+  .discovery-hero-copy {
+    width: 100%;
+    padding: 26px 21px 30px;
+  }
+
+  .discovery-hero-copy h1 {
+    margin: 12px 0 8px;
+    font-size: clamp(34px, 9vw, 45px);
+    letter-spacing: -1.6px;
+  }
+
+  .discovery-hero-copy > p {
+    max-width: 360px;
+    font-size: 12px;
+  }
+
+  .discovery-hero-actions {
+    gap: 7px;
+    margin-top: 17px;
+  }
+
+  .discovery-hero-primary,
+  .discovery-hero-secondary {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+
+  .discovery-hero-caption {
+    top: 14px;
+    right: 14px;
+    bottom: auto;
+    min-width: 0;
+    max-width: 48%;
+    padding: 9px 11px;
+  }
+
+  .discovery-hero-caption small {
+    display: none;
+  }
+
+  .discovery-section {
+    margin-top: 31px;
+  }
+
+  .discovery-section-heading {
+    align-items: flex-start;
+  }
+
+  .discovery-section-aside {
+    max-width: 105px;
+    padding-top: 4px;
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .discovery-dishes {
+    grid-auto-columns: 138px;
+    gap: 12px;
+  }
+
+  .discovery-restaurants {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .discovery-restaurant-card {
+    display: grid;
+    grid-template-columns: minmax(112px, 36%) minmax(0, 1fr);
+  }
+
+  .discovery-restaurant-media {
+    height: 100%;
+    min-height: 158px;
+    aspect-ratio: auto;
+  }
+
+  .discovery-restaurant-media video {
+    height: 100%;
+  }
+
+  .discovery-restaurant-copy {
+    min-width: 0;
+    align-self: center;
+    padding: 12px 11px;
+  }
+
+  .discovery-restaurant-heading {
+    display: block;
+  }
+
+  .discovery-food-count {
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  .discovery-dish-name {
+    margin: 8px 0 10px;
+  }
+
+  .discovery-restaurant-meta {
+    gap: 4px;
+  }
+
+  .discovery-restaurant-meta > span {
+    padding: 4px 6px;
+    font-size: 9px;
+  }
+
+  .discovery-unavailable {
+    margin: 32px auto;
+    padding: 26px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .discovery-header-inner {
+    width: calc(100% - 24px);
+  }
+
+  .discovery-content {
+    width: calc(100% - 24px);
+  }
+
+  .discovery-location select {
+    font-size: 11px;
+  }
+
+  .discovery-hero {
+    min-height: 320px;
+  }
+
+  .discovery-hero-kicker {
+    font-size: 9px;
+  }
+
+  .discovery-hero-copy h1 {
+    font-size: 33px;
+  }
+
+  .discovery-hero-primary,
+  .discovery-hero-secondary {
+    padding: 0 9px;
+    font-size: 10px;
+  }
+
+  .discovery-restaurant-card {
+    grid-template-columns: minmax(96px, 34%) minmax(0, 1fr);
+  }
+
+  .discovery-restaurant-heading h3 {
+    font-size: 14px;
+  }
+
+  .discovery-restaurant-copy {
+    padding: 10px 9px;
+  }
+}
